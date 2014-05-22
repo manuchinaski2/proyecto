@@ -43,6 +43,7 @@ Es decir debe contener el comentario con la sintáxis de javadac, además de con
 Todo esto se controla mediante "hooks", mas concretamente en el fichero pre-commit siguiente:
 
 ..............................................................................................
+#!/bin/bash
 BRANCH=`git branch | grep \* |cut -c3-` ;
 if [ $BRANCH != "master" ] ; then #acciones solo para rama master
         exit 0;
@@ -63,7 +64,7 @@ for FILE in `git diff-index --name-status HEAD -- | cut -c3-` ; do
                 echo "Debes definir etiqueta version en javadoc en el fichero $FILE"
                 exit 1
         fi
-        `javac Prueba.java 2>/dev/null`; #compilación de archivos
+        `javac $FILE 2>/dev/null`; #compilación de archivos
         if [ $? != 0 ] ; then
                 echo "El fichero $FILE no compila correctamente"
                 exit 1
