@@ -1,7 +1,6 @@
 El proyecto consiste en la creación de un repositorio para la gestión colaborativa de proyecto java.
 
 Se crea un fichero .gitignore con el siguiente contenido:
-
 ........................................................
 .~
 *.class
@@ -10,6 +9,7 @@ Se crea un fichero .gitignore con el siguiente contenido:
 Comprobando que funciona:
 ........................................................
 usuario@usuario-System-Product-Name:~/manolo/proyecto$ git add *
+
 The following paths are ignored by one of your .gitignore files:
 Uno.class
 Use -f if you really want to add them.
